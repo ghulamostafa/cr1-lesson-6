@@ -1,3 +1,4 @@
+import 'package:cr1_lesson_6/chat_widget.dart';
 import 'package:cr1_lesson_6/conversation_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -44,29 +45,12 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => ConversationScreen(),
-                  ),
-                );
-              },
-              child: Text('Route me'),
-            ),
-          ],
-        ),
+      body: ListView(
+        children: [
+          ChatWidget(),
+          ChatWidget(),
+          ChatWidget(),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
